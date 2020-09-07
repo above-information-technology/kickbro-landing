@@ -4,11 +4,279 @@
 
 .Landing {
   position: absolute;
-  width: 1440px;
-  height: 1800px;
+  width: 100%;
+  height: 100%;
   left: 0px;
-  top: -273px;
-  background: url(Image);
+  
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center top;
+  background: url("./assets/bg.jpg");
   mix-blend-mode: normal;
   opacity: 0.2;
 }
+
+.font {
+  position: absolute;
+  width: 560px;
+  height: 285px;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -15%);
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  letter-spacing: -2px;
+  color: #ffffff;
+  margin: 40px 0 20px 0;
+}
+.font div {
+  display: contents;
+}
+.inputGroup {
+  position: relative;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -43%);
+  width: 500px !important;
+}
+.button {
+  position: absolute;
+    width: 120px;
+    height: 54px;
+    background: #ff453a;
+    border-radius: 100px;
+    color: white;
+    right: 0%;
+    border: 0px solid #000;
+    transition: all .2s ease-in-out;
+    top: 5%;
+    left: 74.2%;
+    cursor: pointer;
+}
+.button:hover{
+  background: #E72A20;
+  transform: scale(1.03);
+}
+.button:focus{
+  outline: none !important;
+}
+.input {
+  width: 494px;
+  height: 60px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  border-radius: 100px;
+  color: #ffffff;
+  padding: 0px 30px;
+}
+input:focus{
+  border-radius: 100px;
+  outline: none !important;
+  border-color: #fff;
+}
+
+.phoneCase {
+  position: absolute;
+  width: 480.52px;
+  z-index: 2;
+  height: 928.42px;
+  background: url("./assets/phone-case.png");
+}
+
+.phoneScreen {
+  position: absolute;
+  width: 395px;
+  height: 859px;
+  left: 45px;
+  top: 40px;
+  z-index: 1;
+
+  background: url("./assets/phone-screen.jpg");
+}
+.content {
+  width: 100vw;
+  height: 100vh;
+  
+  overflow: hidden !important;
+  background-color: #000;
+  position: relative;
+}
+.imageGroup {
+  position: relative;
+  left: 50%;
+  top: 25%;
+  height: 600px !important;
+  transform: translateX(-50%);
+  width: 500px !important;
+}
+.instagram {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  color: #FFFFFF;
+  position: relative;
+  text-align: center;
+  margin-top: 3%;
+}
+.instagram img {
+  
+  vertical-align: middle;
+}
+.discord{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.2px;
+  color: #FFFFFF;
+  position: relative;
+  text-align: center;
+  top: 23%;
+
+}
+.discord img{
+  vertical-align: middle;
+}
+.notification {
+  position: relative;
+  width: 500px;
+  top: 43%;
+  height: 60px;
+  left: 50%;
+  display: flex;
+  /* background-color: #37d61a; */
+  text-align: center;
+  flex: 1;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: #fff;
+}
+.bottom{
+  position: relative;
+  bottom: -43% !important;
+  transform: translateY(0%);
+}
+.nike {
+  width: 185px ;
+  height: 80px ;
+
+  background: #FF4534;
+  border-radius: 10px;
+}
+.error {
+  position: relative;
+  top: 38%;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: #ff453a;
+  font-size: 20px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen 
+  and (max-width: 380px) 
+  and (max-height: 825px) {
+    .font {
+      position: absolute;
+      width: 360px;
+      height: 285px;
+      left: 50%;
+      top: 15%;
+      transform: translate(-50%, -15%);
+      font-style: normal;
+      font-weight: bold;
+      font-size: 34px;
+      line-height: 40px;
+      text-align: center;
+      letter-spacing: -2px;
+      color: #ffffff;
+      margin: 30px 0 20px 0;
+    }
+    .inputGroup {
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      top: 38%;
+    }
+    .button {
+      position: relative;
+    width: 65%;
+    height: 54px;
+    background: #ff453a;
+    border-radius: 100px;
+    color: white;
+    /* right: 0%; */
+    border: 0px solid #000;
+    transition: all .2s ease-in-out;
+    left: 0%;
+    margin-top: 5px;
+    }
+    .instagram {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.2px;
+      color: #FFFFFF;
+      position: relative;
+      text-align: center;
+      margin-top: 10%
+    }
+    .bottom {
+      position: relative;
+    bottom: -34% !important;
+    transform: translateY(0%);
+    }
+    .input {
+      width: 65%;
+      height: 60px;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
+      border-radius: 100px;
+      color: #ffffff;
+      padding: 0px 30px;
+      margin-top: 10%
+    }
+    .notification {
+      position: relative;
+    width: 390px;
+    top: 42%;
+    height: 190px;
+    left: 50%;
+    display: flex;
+    /* background-color: #37d61a; */
+    text-align: center;
+    flex: 1 1;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    }
+    .error {
+      top: 34%;
+      font-size: 15px;
+    }
+  }
