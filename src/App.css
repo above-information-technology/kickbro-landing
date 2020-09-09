@@ -169,6 +169,7 @@ html, body, body > div {
   height: 80px ;
   background: #FF4534;
   border-radius: 10px;
+  padding: 7px;
 }
 
 a {
