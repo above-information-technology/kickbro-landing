@@ -90,7 +90,7 @@ class App extends Component {
         <div className={classes.Landing}/>
 
         <div className={classes.instagram}>
-          <a href="http://instagram.com/kickbro_worldwide">@kickbro_worldwide<img src={instagram} alt="instagram"/></a>
+          <a href="http://instagram.com/kickbro_worldwide">@kickbro_worldwide <img src={instagram} alt="instagram"/></a>
         </div>
         <div className={classes.font}>
             {`If you asked yourself:\n“How many steps I made \nwith these `}
