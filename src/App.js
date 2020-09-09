@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import classes from "./App.css";
 
-import instagram from "./assets/instagram.png";
-import discord from "./assets/discord.png";
+import instagram from "./assets/instagram.svg";
+import discord from "./assets/discord.svg";
 // import TypeIt from 'typeit-react';
 import TypeIt from "typeit";
 
@@ -73,6 +73,7 @@ class App extends Component {
     .type("Air Jordan")
     .pause(1500)
     .delete()
+    .pause(500)
     .type("Puma")
     .pause(1500)
     .delete()
@@ -89,7 +90,7 @@ class App extends Component {
         <div className={classes.Landing}/>
 
         <div className={classes.instagram}>
-          <a href="http://instagram.com/kickbro_worldwide">@kickbro <img src={instagram} alt="instagram"/></a>
+          <a href="http://instagram.com/kickbro_workdwide">@kickbro <img src={instagram} alt="instagram"/></a>
         </div>
         <div className={classes.font}>
             {`If you asked yourself:\n“How many steps I made \nwith these `}
@@ -123,7 +124,7 @@ class App extends Component {
           <div className={classes.discord}>
             <img src={discord} alt="discord"/><a href="https://discord.gg/PfPgUwg"> Join our discord community</a>
           </div>
-          
+
           <div className={classes.imageGroup}>
             <div className={classes.phoneCase}/>
             <div className={classes.phoneScreen}/>
