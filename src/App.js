@@ -14,7 +14,8 @@ class App extends Component {
     email: "",
     isJoined: false,
     isInvalid: false,
-    isAlreadyJoined: false
+    isAlreadyJoined: false,
+    wrong: false
   };
 
   changeEmail = (event) => {
@@ -30,6 +31,7 @@ class App extends Component {
     axios
       .post("https://kickbro-landing.herokuapp.com/email", {
         email: this.state.email,
+        lowerEmail: this.state.email.toLowerCase()
       })
       .then( () => {
         this.setState({
@@ -42,18 +44,10 @@ class App extends Component {
           if (e.message.includes('status code 400')) {
             this.setState({
               isJoined: false,
-              isInvalid: true,
-              isAlreadyJoined: false
-            });
-          }
-          if (e.message.includes('status code 404')) {
-            this.setState({
-              isJoined: false,
               isInvalid: false,
               isAlreadyJoined: true
             });
           }
-
       });
   };
 
