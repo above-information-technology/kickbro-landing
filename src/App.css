@@ -51,16 +51,16 @@ html, body, body > div {
 
 .button {
   position: absolute;
-    width: calc(2vw + 80px);
-    height: 54px;
-    background: #ff453a;
-    border-radius: 100px;
-    color: white;
-    border: 0 solid #000;
-    transition: all .3s ease-in-out;
-    top: 3px;
-    right: 4px;
-    cursor: pointer;
+  width: calc(2vw + 80px);
+  height: 54px;
+  background: #ff453a;
+  border-radius: 100px;
+  color: white;
+  border: 0 solid #000;
+  transition: all .3s ease-in-out;
+  top: 3px;
+  right: 4px;
+  cursor: pointer;
 }
 .button:hover{
   background: #E72A20;
@@ -83,6 +83,18 @@ html, body, body > div {
   border-radius: 100px;
   outline: none !important;
   border-color: #fff;
+}
+.input[isinvalid=true] {
+  border-color: #E72A20;
+  margin-bottom: 20px;
+}
+
+.error {
+  position: absolute;
+  top: 62px;
+  left: 20px;
+  color: #ff453a;
+  font-size: 14px;
 }
 
 .phoneCase {
@@ -143,20 +155,13 @@ html, body, body > div {
 }
 
 .notification {
-  position: relative;
-  width: 500px;
-  top: 43%;
-  height: 60px;
-  left: 50%;
-  display: flex;
-  /* background-color: #37d61a; */
-  text-align: center;
-  flex: 1;
-  transform: translate(-50%, -50%);
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
+  background-color: #37d61a75;
+  border-radius: 10px;
+  font-size: calc(0.8vw + 15px);
   color: #fff;
+  margin: 0 30px 20px 30px;
+  text-align: center;
+  max-width: 500px;
 }
 
 .nike {
@@ -165,18 +170,7 @@ html, body, body > div {
   background: #FF4534;
   border-radius: 10px;
 }
-.error {
-  position: relative;
-  top: 38%;
-  text-align: center;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  color: #ff453a;
-  font-size: 20px;
-  margin:20px;
-}
+
 a {
   color: white;
   text-decoration: none;
@@ -192,9 +186,24 @@ a:hover {
 
 @media (max-width: 500px) {
   .imageGroup {
-    height: 270px !important;
+    height: 230px !important;
     transform: scale(0.7);
     transform-origin: top;
   }
-
+  .inputGroup {
+    padding-bottom: 70px;
+    margin-top: 0;
+  }
+  .input {
+    padding: 0 30px;
+  }
+  .button {
+    width: 100%;
+    top: 70px;
+    right: 0;
+    left: 0;
+  }
+  .input[isinvalid=true] ~ .button {
+    top: 90px
+  }
 }
