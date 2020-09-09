@@ -1,60 +1,65 @@
-.App {
-  text-align: center;
+html, body, body > div {
+  height: 100%;
+}
+
+.content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden !important;
+  overflow-y: auto;
+  background-color: #000;
+  position: relative;
 }
 
 .Landing {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0px;
-  
-  background-repeat: no-repeat !important;
+  left: 0;
+  top:0;
   background-size: cover !important;
-  background-position: center top;
-  background: url("./assets/bg.jpg");
+  background: url("./assets/bg.jpg") no-repeat center top !important;
   mix-blend-mode: normal;
   opacity: 0.2;
 }
 
 .font {
-  position: absolute;
-  width: 560px;
-  height: 285px;
-  left: 50%;
-  top: 15%;
-  transform: translate(-50%, -15%);
-
+  white-space: pre-line;
+  max-width: 560px;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 57px;
+  font-size: calc(1.5vw + 22px);
+  line-height: calc(1.5vw + 30px);
   text-align: center;
   letter-spacing: -2px;
   color: #ffffff;
-  margin: 40px 0 20px 0;
+  margin: calc(1.5vw + 15px);
 }
+
 .font div {
   display: contents;
 }
+
 .inputGroup {
   position: relative;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -43%);
-  width: 500px !important;
+  width: calc(250px + 13vw) !important;
+  margin: calc(1.5vw + 15px) 0;
 }
+
 .button {
   position: absolute;
-    width: 120px;
+    width: calc(2vw + 80px);
     height: 54px;
     background: #ff453a;
     border-radius: 100px;
     color: white;
-    right: 0%;
-    border: 0px solid #000;
-    transition: all .2s ease-in-out;
-    top: 5%;
-    left: 74.2%;
+    border: 0 solid #000;
+    transition: all .3s ease-in-out;
+    top: 3px;
+    right: 4px;
     cursor: pointer;
 }
 .button:hover{
@@ -65,16 +70,16 @@
   outline: none !important;
 }
 .input {
-  width: 494px;
+  width: 100%;
   height: 60px;
   background: #000000;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
   border-radius: 100px;
   color: #ffffff;
-  padding: 0px 30px;
+  padding: 0 calc(2vw + 90px) 0 30px;
 }
-input:focus{
+.input:focus{
   border-radius: 100px;
   outline: none !important;
   border-color: #fff;
@@ -99,37 +104,29 @@ input:focus{
   background-repeat: no-repeat!important;
   background: url("./assets/phone-screen.jpg");
 }
-.content {
-  width: 100vw;
-  height: 100vh;
-  
-  overflow: hidden !important;
-  background-color: #000;
-  position: relative;
-}
+
 .imageGroup {
   position: relative;
-  left: 50%;
-  top: 25%;
-  height: 600px !important;
-  transform: translateX(-50%);
-  width: 500px !important;
+  height: 388px !important;
+  width: 481px !important;
 }
+
 .instagram {
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: calc(0.3vw + 14px);
+  line-height: 1;
   letter-spacing: 0.2px;
   color: #FFFFFF;
   position: relative;
   text-align: center;
-  margin-top: 3%;
+  margin-top: calc(1.5vw + 15px);
 }
+
 .instagram img {
-  
   vertical-align: middle;
 }
+
 .discord{
   font-weight: bold;
   font-size: 16px;
@@ -144,6 +141,7 @@ input:focus{
 .discord img{
   vertical-align: middle;
 }
+
 .notification {
   position: relative;
   width: 500px;
@@ -160,15 +158,10 @@ input:focus{
   font-size: 25px;
   color: #fff;
 }
-.bottom{
-  position: relative;
-  bottom: -43% !important;
-  transform: translateY(0%);
-}
+
 .nike {
   width: 185px ;
   height: 80px ;
-
   background: #FF4534;
   border-radius: 10px;
 }
@@ -187,164 +180,21 @@ input:focus{
 a {
   color: white;
   text-decoration: none;
+  transition: all .3s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 0.8;
   cursor: pointer;
+  transition: all .3s ease;
 }
-@media only screen and (max-width: 992px) {
-  .notification {
-    width:80%;
-    margin:20px 0px;
-  }
-  .inputGroup {
-    margin:20px 0;
-  }
 
-}
-@media only screen and (max-width: 600px) {
-  .notification {
-    width:80%;
-  }
-  .font {
-    width: 80%!important;
-    font-size: 28px!important;
-    line-height: 25px!important;
-  }
-  .input {
-    max-width: 80%!important;
-    padding: 0px 30px;
-    margin: 20px auto;
-    display: inline-block;
-  }
-  .button {
-    position: initial!important;
-    width: 80%;
-  }
-  .inputGroup {
-    text-align: center;
-    width: 100%!important;
-  }
-  .phoneCase {
-    background: url("./assets/phone-case_compressed.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 280px!important;
-    top: 130px!important;
-    margin: 0 auto;
-    z-index: 3;
-    position: relative;
-  }
-  
-  .phoneScreen {
-    background: url("./assets/phone-screen_compressed.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 0px!important;
-    top: inherit!important; 
-    position: absolute;
-    width: 235px;
-    height: 859px;
-    left: 130px;
-  }
+@media (max-width: 500px) {
   .imageGroup {
-    position: relative;
-    left: 50%;
-    top: 25%;
-    height: 600px !important;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
+    height: 270px !important;
+    transform: scale(0.7);
+    transform-origin: top;
   }
-
 
 }
-@media screen 
-  and (max-width: 380px) 
-  and (max-height: 825px) {
-    .font {
-      position: absolute;
-      width: 360px;
-      height: 285px;
-      left: 50%;
-      top: 15%;
-      transform: translate(-50%, -15%);
-      font-style: normal;
-      font-weight: bold;
-      font-size: 34px;
-      line-height: 40px;
-      text-align: center;
-      letter-spacing: -2px;
-      color: #ffffff;
-      margin: 30px 0 20px 0;
-    }
-    .inputGroup {
-      flex-direction: column;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      top: 38%;
-    }
-    .button {
-      position: relative;
-    width: 65%;
-    height: 54px;
-    background: #ff453a;
-    border-radius: 100px;
-    color: white;
-    /* right: 0%; */
-    border: 0px solid #000;
-    transition: all .2s ease-in-out;
-    left: 0%;
-    margin-top: 5px;
-    }
-    .instagram {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 19px;
-      letter-spacing: 0.2px;
-      color: #FFFFFF;
-      position: relative;
-      text-align: center;
-      margin-top: 10%
-    }
-    .bottom {
-      position: relative;
-    bottom: -34% !important;
-    transform: translateY(0%);
-    }
-    .input {
-      width: 65%;
-      height: 60px;
-      background: #000000;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-sizing: border-box;
-      border-radius: 100px;
-      color: #ffffff;
-      padding: 0px 30px;
-      margin-top: 10%
-    }
-    .notification {
-      position: relative;
-    width: 390px;
-    top: 42%;
-    height: 190px;
-    left: 50%;
-    display: flex;
-    /* background-color: #37d61a; */
-    text-align: center;
-    flex: 1 1;
-    transform: translate(-50%, -50%);
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #fff;
-    }
-    .error {
-      top: 34%;
-      font-size: 15px;
-    }
-  }
