@@ -31,8 +31,8 @@ html, body, body > div {
   max-width: 560px;
   font-style: normal;
   font-weight: bold;
-  font-size: calc(1.5vw + 18px);
-  line-height: calc(1.5vw + 28px);
+  font-size: calc(1.5vw + 22px);
+  line-height: calc(1.5vw + 30px);
   text-align: center;
   letter-spacing: -2px;
   color: #ffffff;
