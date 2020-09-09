@@ -40,7 +40,7 @@ class App extends Component {
   };
 
   render() {
-    let  successMessage = (<div className={classes.notification}>You successfully signed up. Stay tuned there are news to come.</div>);
+    let  successMessage = (<div className={classes.notification}>You successfully signed up. Stay tuned, there are news to come.</div>);
     let errorMessage = (<div className={classes.error}>Invalid email address</div>);
 
     return (
@@ -55,8 +55,7 @@ class App extends Component {
             <TypeIt className={classes.nike} options={{ loop: true, speed: 200 }}>{`Nike's`}</TypeIt>
             {`?”\nThen this app is for you. \nJoin our beta.`}
         </div>
-        {this.state.isInvalid ? 
-          errorMessage : null}
+
         {!this.state.isJoined ?
           <div className={classes.inputGroup}>
               <input
@@ -65,7 +64,9 @@ class App extends Component {
                 placeholder="enter your email here"
                 value={this.state.email}
                 onChange={this.changeEmail}
+                isInvalid={this.state.isInvalid ? "true" : "false"}
               />
+              {this.state.isInvalid ? errorMessage : null}
               <button className={classes.button} onClick={this.onJoin}>
                 Join beta
               </button>
