@@ -123,6 +123,7 @@ class App extends Component {
           <div className={classes.discord}>
             <img src={discord} alt="discord"/><a href="https://discord.gg/PfPgUwg"> Join our discord community</a>
           </div>
+          
           <div className={classes.imageGroup}>
             <div className={classes.phoneCase}/>
             <div className={classes.phoneScreen}/>
