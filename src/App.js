@@ -82,7 +82,7 @@ class App extends Component {
 
   render() {
     let  successMessage = (<div className={classes.notification}>You successfully signed up. Stay tuned, there are news to come.</div>);
-    let errorMessage = (<div className={classes.error}>Wrong email address</div>);
+    let errorMessage = (<div className={classes.error}>Wrong email format</div>);
     let alreadyJoinedMessage = (<div className={classes.notification}>You've already joined our beta. Stay tuned, there are news to come.</div>);
 
     return (
@@ -90,14 +90,14 @@ class App extends Component {
         <div className={classes.Landing}/>
 
         <div className={classes.instagram}>
-          <a href="http://instagram.com/kickbro_workdwide">@kickbro <img src={instagram} alt="instagram"/></a>
+          <a href="http://instagram.com/kickbro_worldwide">@kickbro_worldwide<img src={instagram} alt="instagram"/></a>
         </div>
         <div className={classes.font}>
             {`If you asked yourself:\n“How many steps I made \nwith these `}
             <span className={classes.nike} ref={(el) => { this.el = el; }}></span>
             
 
-            {`?”\nThen this app is for you. \nJoin our beta.`}
+            {`?”\nThen this app is for you. \nJoin our Beta.`}
         </div>
 
         {!this.state.isJoined ?
@@ -109,14 +109,14 @@ class App extends Component {
                   <input
                     className={classes.input}
                     type="text"
-                    placeholder="enter your email here"
+                    placeholder="enter your email address"
                     value={this.state.email}
                     onChange={this.changeEmail}
                     isinvalid={this.state.isInvalid ? "true" : "false"}
                   />
                   {this.state.isInvalid ? errorMessage : null}
                   <button className={classes.button} onClick={this.onJoin}>
-                    Join beta
+                    Join Beta
                   </button>
               </div>
             ) : successMessage }
