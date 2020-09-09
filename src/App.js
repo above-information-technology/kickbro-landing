@@ -5,6 +5,7 @@ import instagram from "./assets/instagram.svg";
 import discord from "./assets/discord.svg";
 // import TypeIt from 'typeit-react';
 import TypeIt from "typeit";
+import isEmail from 'validator/lib/isEmail';
 
 const axios = require("axios");
 
@@ -23,6 +24,9 @@ class App extends Component {
   };
 
   onJoin = () => {
+    if (!isEmail(this.state.email)) {
+      this.setState({ isInvalid: true })
+    }
     axios
       .post("https://kickbro-landing.herokuapp.com/email", {
         email: this.state.email,
@@ -97,7 +101,7 @@ class App extends Component {
             <span className={classes.nike} ref={(el) => { this.el = el; }}></span>
             
 
-            {`?”\nThen this app is for you. \nJoin our Beta.`}
+            {`?”\nthen this app is for you. \nJoin our Beta.`}
         </div>
 
         {!this.state.isJoined ?
@@ -122,7 +126,7 @@ class App extends Component {
             ) : successMessage }
         <div className={classes.bottom}>
           <div className={classes.discord}>
-            <img src={discord} alt="discord"/><a href="https://discord.gg/PfPgUwg"> Join our discord community</a>
+            <img src={discord} alt="discord"/><a href="https://discord.gg/PfPgUwg"> Join Our Discord Community</a>
           </div>
 
           <div className={classes.imageGroup}>
