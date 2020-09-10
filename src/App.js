@@ -6,6 +6,7 @@ import discord from "./assets/discord.svg";
 // import TypeIt from 'typeit-react';
 import TypeIt from "typeit";
 import isEmail from 'validator/lib/isEmail';
+import Loader from 'react-loader-spinner'
 
 const axios = require("axios");
 
@@ -15,7 +16,7 @@ class App extends Component {
     isJoined: false,
     isInvalid: false,
     isAlreadyJoined: false,
-    wrong: false
+    load: false
   };
 
   changeEmail = (event) => {
@@ -25,8 +26,12 @@ class App extends Component {
   };
 
   onJoin = () => {
+    this.setState({ load: true })
     if (!isEmail(this.state.email)) {
-      this.setState({ isInvalid: true })
+      this.setState({ 
+        isInvalid: true,
+        load: false 
+      })
     }
     axios
       .post("https://kickbro-landing.herokuapp.com/email", {
@@ -37,7 +42,8 @@ class App extends Component {
         this.setState({
           isJoined: true,
           isInvalid: false,
-          isAlreadyJoined: false
+          isAlreadyJoined: false,
+          load: false
         });
       })
       .catch( (e) => {
@@ -45,7 +51,8 @@ class App extends Component {
             this.setState({
               isJoined: false,
               isInvalid: false,
-              isAlreadyJoined: true
+              isAlreadyJoined: true,
+              load: false
             });
           }
       });
@@ -95,12 +102,20 @@ class App extends Component {
             <span className={classes.nike} ref={(el) => { this.el = el; }}></span>
             
 
-            {`?”\nthen this app is for you. \nJoin our Beta.`}
+            {`?”\nthen this app is for you. \nJoin our Beta.\n`}
         </div>
 
         {!this.state.isJoined ?
           this.state.isAlreadyJoined ? 
             alreadyJoinedMessage
+            :
+            this.state.load ? 
+              <Loader
+                type="Puff"
+                color="#FFF"
+                height={40}
+                width={40}
+              />
             :
             (
               <div className={classes.inputGroup}>
@@ -112,9 +127,10 @@ class App extends Component {
                     onChange={this.changeEmail}
                     isinvalid={this.state.isInvalid ? "true" : "false"}
                   />
+                  
                   {this.state.isInvalid ? errorMessage : null}
                   <button className={classes.button} onClick={this.onJoin}>
-                    Join Beta
+                    Join Beta 
                   </button>
               </div>
             ) : successMessage }
